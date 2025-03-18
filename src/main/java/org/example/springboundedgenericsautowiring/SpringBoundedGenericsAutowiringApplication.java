@@ -14,20 +14,21 @@ public class SpringBoundedGenericsAutowiringApplication {
     }
     @Bean
     public CommandLineRunner commandLineRunner(
-                                               InjectMultiBoundGenericsListInConstructor injectGenericsListInConstructor,
-                                               InjectMultiBoundGenericsInConstructorByTypeFooBarAndName injectGenericsInConstructor,
-                                               InjectFewSingleBoundGenericsInConstructorByTypesFooAndBarAndName injectGenericsInConstructor2,
-                                               InjectSingleBoundGenericInConstructorByTypeFooAndName injectSingleBoundGenericInConstructorByTypeFooAndName,
-                                               InjectListOfSingleBoundGenericInConstructorByTypeBar injectListOfSingleBoundGenericInConstructorByTypeBar,
-                                               InjectListOfListOfBoundedTypes injectListOfListOfGenerics) {
+            InjectMultiBoundGenericsListInConstructor injectGenericsListInConstructor,
+            InjectMultiBoundGenericsInConstructorByTypeFooBarAndName injectGenericsInConstructor,
+            InjectFewSingleBoundGenericsByTypesFooAndBarAndName injectFewSingleBoundGenericsByTypesFooAndBarAndName,
+            InjectSingleBoundGenericInConstructorByTypeFooAndName injectSingleBoundGenericInConstructorByTypeFooAndName,
+            InjectListOfSingleBoundGenericInConstructorByTypeBar injectListOfSingleBoundGenericInConstructorByTypeBar,
+            InjectListOfListOfBoundedTypes injectListOfListOfGenerics, InjectBeanViaUnboundedGenericConstructorByNameOnly injectBeanViaUnboundedGenericConstructorByNameOnly) {
         return args -> {
             System.out.println("--------------------------------------");
             injectGenericsListInConstructor.displayMethod();
             injectGenericsInConstructor.displayMethod();
-            injectGenericsInConstructor2.displayMethod();
+            injectFewSingleBoundGenericsByTypesFooAndBarAndName.displayMethod();
             injectSingleBoundGenericInConstructorByTypeFooAndName.displayMethod();
             injectListOfSingleBoundGenericInConstructorByTypeBar.displayMethod();
             injectListOfListOfGenerics.displayMethod();
+            injectBeanViaUnboundedGenericConstructorByNameOnly.displayMethod();
             System.out.println("--------------------------------------");
         };
     }
